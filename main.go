@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"playground/basic"
+	"playground/basic/collections"
 )
 
 func main() {
@@ -68,4 +69,20 @@ func main() {
 	res10.Compose = basic.Composition{Text: "explicit"}
 
 	fmt.Println(res10)
+
+	res11 := collections.IntArray
+	// use %q to print each element as equivalent quoted string
+	fmt.Printf("%q\n", res11)
+	fmt.Printf("%d\n", res11)
+	// same as fmt.Printf("%d\n", res11)
+	fmt.Println(res11)
+
+	res12 := collections.MultiDimensionArray
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 1; j++ {
+			res12[i][j] = fmt.Sprintf("row %d - column %d", i, j)
+		}
+	}
+	fmt.Printf("%q\n", res12)
+	fmt.Println(res12)
 }
