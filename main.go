@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"playground/basic"
-	"playground/basic/collections"
+	"go-playground/basic"
+	"go-playground/basic/collections"
+	"sync"
 )
 
 func main() {
@@ -85,4 +86,34 @@ func main() {
 	}
 	fmt.Printf("%q\n", res12)
 	fmt.Println(res12)
+
+	// Chp. 7 interfaces
+	res13 := basic.Greet(&basic.User{FirstName: "firstName", LastName: "lastName"})
+	fmt.Println(res13)
+
+	var wg sync.WaitGroup
+
+	// Chp. concurrency
+	//wg.Add(2)
+
+	wg.Add(1)
+	go basic.GoroutinePrint(&wg, "Concurrency!")
+
+	wg.Add(1)
+	go basic.GoroutinePrintf(&wg, "Concurrency Print Evaluate")
+
+	// we cannot do as follow since goroutine only pass value via channel
+	// so not sure when the return result will pass as value to another func
+	// fmt.Println(basic.GoroutinePrintf(&wg, "Concurrency Print Evaludate first"))
+	//wg.Wait()
+
+	ch := make(chan int)
+	wg.Add(2)
+	go basic.ChannelPass(5, ch, &wg)
+	go basic.ChannelPass(15, ch, &wg)
+	// not guarantee order, but if we combine defer wg.Done()
+
+	fmt.Printf("%d, %d \n", <-ch, <-ch)
+	// wait done should wait channel calls are all done.
+	wg.Wait()
 }
