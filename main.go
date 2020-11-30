@@ -116,4 +116,20 @@ func main() {
 	fmt.Printf("%d, %d \n", <-ch, <-ch)
 	// wait done should wait channel calls are all done.
 	wg.Wait()
+
+	chFib := make(chan int, 10)
+	go basic.ChannelFib(cap(chFib), chFib)
+	basic.ChannelRange(chFib)
+
+	fmt.Println("channel select:")
+	// select case with go channel
+	chSelect := make(chan int)
+	chSelectQuit := make(chan int)
+	go func() {
+		for i := 0; i < 10; i++ {
+			fmt.Println(<-chSelect)
+		}
+		chSelectQuit <- 0
+	}()
+	basic.ChannelSelect(chSelect, chSelectQuit)
 }
