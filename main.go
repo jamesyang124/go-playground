@@ -132,4 +132,6 @@ func main() {
 		chSelectQuit <- 0
 	}()
 	basic.ChannelSelect(chSelect, chSelectQuit)
+
+	basic.RunSelectWithTimeout()
 }
