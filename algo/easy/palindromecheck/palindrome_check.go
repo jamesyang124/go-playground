@@ -1,6 +1,9 @@
 package palindromcheck
 
 // https://www.algoexpert.io/questions/Palindrome%20Check
+// given string ex: "abcdcba"
+// is palindrome if tail and end the same in each sub-arrays which shrink from tail and head by 1
+// a == a, then check "bcdcb" and so on
 
 // IsPalindrome ...
 // https://yourbasic.org/golang/for-loop-range-array-slice-map-channel/

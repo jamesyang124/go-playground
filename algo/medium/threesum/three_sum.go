@@ -4,6 +4,17 @@ import "sort"
 
 // ThreeSum ...
 // https://leetcode.com/problems/3sum/
+// given array may have duplicate elements, output unique triplets
+// [-2,0,1,1,2]
+// => [[-2,0,2],[-2,1,1]]
+//
+// [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]
+// => [[-4,-2,6],[-4,0,4],[-4,1,3],[-4,2,2],[-2,-2,4],[-2,0,2]]
+//
+// [-2,0,0,2,2]
+// => [[-2,0,2]]
+
+// ThreeSum ...
 // sort to reduce time, then comparison from both side
 // works when duplicate elements
 // faster than other 95%
