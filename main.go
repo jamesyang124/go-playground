@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
+	"go-playground/algo/threesum"
 	"go-playground/basic"
 	"go-playground/basic/collections"
 	"sync"
 )
 
-func main() {
+func mainBasic() {
 	fmt.Printf("hello, world\n")
 
 	a := [...]int{1, 2, 3, 4, 5}
@@ -134,4 +135,14 @@ func main() {
 	basic.ChannelSelect(chSelect, chSelectQuit)
 
 	basic.RunSelectWithTimeout()
+}
+
+func mainAlgo() {
+	res := threesum.ThreeSum([]int{-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6})
+	fmt.Println(res)
+}
+
+func main() {
+	// mainBasic()
+	mainAlgo()
 }
