@@ -2,7 +2,7 @@ package threesum
 
 import "sort"
 
-// ThreeSum ...
+// leetcode 15
 // https://leetcode.com/problems/3sum/
 // given array may have duplicate elements, output unique triplets
 // [-2,0,1,1,2]
