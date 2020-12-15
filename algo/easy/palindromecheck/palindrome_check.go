@@ -7,7 +7,9 @@ package palindromcheck
 
 // IsPalindrome ...
 // https://yourbasic.org/golang/for-loop-range-array-slice-map-channel/
-// n -2 -2 -2... => O(n) time, O(1) space
+// n -2 -2 -2... => O(n) time
+// T O(n)
+// S O(1)
 func IsPalindrome(str string) bool {
 	// Write your code here.
 	check := true

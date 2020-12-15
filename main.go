@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-playground/algo/medium/threesum"
+	"go-playground/algo/medium"
 	"go-playground/basic"
 	"go-playground/basic/collections"
 	"sync"
@@ -138,7 +138,10 @@ func mainBasic() {
 }
 
 func mainAlgo() {
-	res := threesum.ThreeSum([]int{-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6})
+	// res := threesum.ThreeSum([]int{-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6})
+	// res := medium.MoveElementToEnd([]int{5, 1, 2, 5, 5, 3, 4, 6, 7, 5, 8, 9, 10, 11, 5, 5, 12}, 5)
+
+	res := medium.MoveElementToFront([]int{5, 1, 2, 5, 5, 3, 4, 6, 7, 5, 8, 9, 10, 11, 5, 5, 12}, 5)
 	fmt.Println(res)
 }
 

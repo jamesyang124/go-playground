@@ -38,6 +38,8 @@ func recursion(array SpecialArray, mult int) int {
 // ProductSum ...
 // Tip: Each element of `array` can either be cast
 // to `SpecialArray` or `int`.
+// T O(n)
+// S O(d), d < n
 func ProductSum(array []interface{}) int {
 	return recursion(array, 1)
 }

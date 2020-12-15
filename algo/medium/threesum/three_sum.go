@@ -19,6 +19,9 @@ import "sort"
 // works when duplicate elements
 // faster than other 95%
 // 28 ms
+// usually O(n^(k-1))
+// T O(n^2)
+// S O(1)
 func ThreeSum(nums []int) [][]int {
 	target := 0
 	// O(nlogn)
