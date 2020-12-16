@@ -1,4 +1,4 @@
-package medium
+package riversizes
 
 func recursion(matrix [][]int, i, j int) int {
 	if matrix[i][j] == 0 {
