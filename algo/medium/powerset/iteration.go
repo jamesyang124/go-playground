@@ -1,12 +1,12 @@
 package powerset
 
-// PowersetItr ...
+// Iteration ...
 // given array, populate its elements as power set
 // ex: [1, 2, 3]
 // as: [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 // T O(n*2^n)
 // S O(n*2^n) in last run create array with n*2^n size though it used as output
-func PowersetItr(array []int) [][]int {
+func Iteration(array []int) [][]int {
 	output := [][]int{{}}
 	outputLen := len(output)
 
