@@ -1,6 +1,7 @@
 package easy
 
 // BubbleSort ...
+// https://www.geeksforgeeks.org/bubble-sort/
 // could naively iterate n^2 times,
 // keep swapping comparison with next element, iterate n times for whole array scan
 // but we could shortcut when no longer have to swapped
