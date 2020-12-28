@@ -1,12 +1,5 @@
 package findclosestvalueinbst
 
-func absdiff(a, b int) int {
-	if a > b {
-		return a - b
-	}
-	return b - a
-}
-
 func recursion(tree *BST, target, closest int) int {
 	if absdiff(closest, target) > absdiff(tree.Value, target) {
 		closest = tree.Value

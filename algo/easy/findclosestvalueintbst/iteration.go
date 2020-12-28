@@ -1,33 +1,24 @@
 package findclosestvalueinbst
 
-func absdiff(a, b int) int {
-	if a > b {
-		return a - b
-	}
-	return b - a
-}
-
 // Iteration ...
 // https://www.algoexpert.io/questions/Find%20Closest%20Value%20In%20BST
+//
+// check absolute diff with previous closest and current node
+// keep iterate throguh as binary searching to ensure not missing
+// indirect nodes
+//
 // T O(n), avg O(logn)
 // S O(1)
 func (tree *BST) Iteration(target int) int {
-	var output, diff int
+	var closest int
 
 	if tree != nil {
-		output = tree.Value
-		diff = absdiff(tree.Value, target)
+		closest = tree.Value
 	}
 
 	for tree != nil {
-		if tree.Left != nil && diff > absdiff(tree.Left.Value, target) {
-			diff = absdiff(tree.Left.Value, target)
-			output = tree.Left.Value
-		}
-
-		if tree.Right != nil && diff > absdiff(tree.Right.Value, target) {
-			diff = absdiff(tree.Right.Value, target)
-			output = tree.Right.Value
+		if absdiff(closest, target) > absdiff(tree.Value, target) {
+			closest = tree.Value
 		}
 
 		if tree.Value < target {
@@ -37,5 +28,5 @@ func (tree *BST) Iteration(target int) int {
 		}
 	}
 
-	return output
+	return closest
 }

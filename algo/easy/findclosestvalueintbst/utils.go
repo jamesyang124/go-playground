@@ -7,3 +7,10 @@ type BST struct {
 	Left  *BST
 	Right *BST
 }
+
+func absdiff(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
+}
