@@ -18,6 +18,7 @@ func InsertionSort(array []int) []int {
 		}
 	*/
 
+	// from before
 	// can short circuit if before < current
 	for i := 1; i < len(array); i++ {
 		for j := i - 1; j >= 0; j-- {
