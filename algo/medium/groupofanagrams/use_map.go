@@ -1,7 +1,5 @@
 package groupofanagrams
 
-import "sort"
-
 // UseMap ...
 // https://www.algoexpert.io/questions/Group%20Anagrams
 // ["ab", "ba", "cde", "dec"] => [["ab", "ba"], ["cde", "dev"]]
@@ -25,14 +23,4 @@ func UseMap(words []string) [][]string {
 	}
 
 	return output
-}
-
-func sortWord(word string) string {
-	bytes := []byte(word)
-
-	sort.Slice(bytes, func(i, j int) bool {
-		return bytes[i] < bytes[j]
-	})
-
-	return string(bytes)
 }
